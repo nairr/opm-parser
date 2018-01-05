@@ -52,6 +52,7 @@ set(opmparser_SOURCES Deck/Deck.cpp
                       EclipseState/Eclipse3DProperties.cpp
                       EclipseState/EclipseConfig.cpp
                       EclipseState/EclipseState.cpp
+                      EclipseState/AquiferCT.cpp                      
                       EclipseState/EndpointScaling.cpp
                       EclipseState/Grid/Box.cpp
                       EclipseState/Grid/BoxManager.cpp
@@ -208,6 +209,7 @@ add_test(NAME EclipseStateTests
 
 foreach(test ADDREGTests
              AqudimsTests
+             AquiferCTTests
              BoxTests
              ColumnSchemaTests
              CompletionTests
