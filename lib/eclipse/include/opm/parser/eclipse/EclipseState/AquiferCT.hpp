@@ -85,12 +85,12 @@ namespace Opm {
             const int getAqPvtTabID(size_t aquiferIndex);
             const double getAqInfluxCoeff(size_t aquanconRecord);
             const double getAqInfluxMult(size_t aquanconRecord);
-
+    
+        private:
+  
             std::vector<AquiferCT::AQUCT_data> m_aquct;
             std::vector<AquiferCT::AQUANCON_data> m_aquancon;
     
-        private:
-
             inline void set_default_tables(std::vector<double>& td, std::vector<double>& pi)
             {
                 std::vector<double> default_pressure_ = { 0.112, 0.229, 0.315, 0.376, 0.424, 0.469, 0.503, 0.564, 0.616, 0.659, 0.702, 0.735, 
