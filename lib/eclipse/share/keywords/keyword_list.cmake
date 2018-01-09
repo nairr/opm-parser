@@ -189,6 +189,7 @@ set( keywords
      000_Eclipse100/P/PATHS
      000_Eclipse100/P/PBVD
      000_Eclipse100/P/PCG
+     000_Eclipse100/P/PDVD
      000_Eclipse100/P/PERFORMANCE_PROBE
      000_Eclipse100/P/PERMR
      000_Eclipse100/P/PERMTHT
@@ -317,6 +318,7 @@ set( keywords
      000_Eclipse100/T/TITLE
      000_Eclipse100/T/TLMIXPAR
      000_Eclipse100/T/TNUM
+     000_Eclipse100/T/TOLCRIT
      000_Eclipse100/T/TOPS
      000_Eclipse100/T/TRACER
      000_Eclipse100/T/TRACERS
