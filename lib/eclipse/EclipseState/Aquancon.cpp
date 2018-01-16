@@ -17,6 +17,7 @@
   along with OPM.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+
 #include <opm/parser/eclipse/EclipseState/Aquancon.hpp>
 #include <algorithm>
 #include <iterator>

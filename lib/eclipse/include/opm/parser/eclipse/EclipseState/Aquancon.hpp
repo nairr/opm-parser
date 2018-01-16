@@ -26,14 +26,15 @@
   implement the Carter Tracy analytical aquifer model in OPM Flow.
 */
 
+
 #include <opm/parser/eclipse/EclipseState/Grid/EclipseGrid.hpp>
 #include <opm/parser/eclipse/Parser/ParserKeywords/A.hpp>
 #include <opm/parser/eclipse/Deck/Deck.hpp>
 #include <opm/parser/eclipse/Deck/DeckItem.hpp>
 #include <opm/parser/eclipse/Deck/DeckRecord.hpp>
 #include <opm/parser/eclipse/Deck/DeckKeyword.hpp>
-#include <boost/concept_check.hpp>
 
+#include <boost/concept_check.hpp>
 #include <iostream>
 
 namespace Opm {
@@ -82,6 +83,7 @@ namespace Opm {
             // Aquifer ID
             std::vector<int> m_aquiferID_per_record;
             int m_maxAquID = 0;
+
     };
 }
 
