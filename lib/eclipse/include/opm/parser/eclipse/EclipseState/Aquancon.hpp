@@ -33,7 +33,6 @@
 #include <opm/parser/eclipse/Deck/DeckRecord.hpp>
 #include <opm/parser/eclipse/Deck/DeckKeyword.hpp>
 #include <boost/concept_check.hpp>
-
 #include <iostream>
 
 namespace Opm {
@@ -44,7 +43,9 @@ namespace Opm {
             struct AquanconOutput{
                 int aquiferID;
                 std::vector<size_t> global_index;
-                std::vector<double> face_area;
+                std::vector<double> influx_coeff; // Size = size(global_index)
+                std::vector<double> influx_multiplier; // Size = size(global_index)
+                std::vector<std::string> reservoir_face_dir; // Size = size(global_index)
             };
 
             Aquancon(const EclipseGrid& grid, const Deck& deck);
@@ -60,16 +61,18 @@ namespace Opm {
                     std::vector<size_t> global_index_per_record;
 
                     // Variables constants
-                    double  influx_coeff_per_record,  //Aquifer influx coefficient
-                            influx_mult_per_record;   //Aquifer influx coefficient Multiplier       
+                    std::vector<double>  influx_coeff_per_record,  //Aquifer influx coefficient
+                                         influx_mult_per_record;   //Aquifer influx coefficient Multiplier       
                     // Cell face to connect aquifer to        
-                    std::string face_per_record;           
+                    std::vector<std::string> face_per_record;           
 
             };
 
             void logic_application(std::vector<Aquancon::AquanconOutput>& output_vector);
 
             void collate_function(std::vector<Aquancon::AquanconOutput>& output_vector);
+
+            void convert_record_id_to_aquifer_id(std::vector<int>& record_indices_matching_id, int i);
 
             std::vector<Aquancon::AquanconOutput> m_aquoutput;
 
@@ -78,6 +81,7 @@ namespace Opm {
             // Aquifer ID
             std::vector<int> m_aquiferID_per_record;
             int m_maxAquID = 0;
+            
     };
 }
 
