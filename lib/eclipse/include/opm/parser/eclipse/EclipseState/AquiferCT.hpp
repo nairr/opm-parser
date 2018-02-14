@@ -72,9 +72,12 @@ namespace Opm {
         private:
   
             std::vector<AquiferCT::AQUCT_data> m_aquct;
-    
+            
+            //Set the default Pd v/s Td tables (constant terminal rate case for an infinite aquifer) as described in 
+            //Van Everdingen, A. & Hurst, W., December, 1949.The Application of the Laplace Transformation to Flow Problems in Reservoirs. 
+            //Petroleum Transactions, AIME.
             inline void set_default_tables(std::vector<double>& td, std::vector<double>& pi)
-            {
+            {   
                 std::vector<double> default_pressure_ = { 0.112, 0.229, 0.315, 0.376, 0.424, 0.469, 0.503, 0.564, 0.616, 0.659, 0.702, 0.735, 
                                                           0.772, 0.802, 0.927, 1.02, 1.101, 1.169, 1.275, 1.362, 1.436, 1.5, 1.556, 1.604, 
                                                           1.651, 1.829, 1.96, 2.067, 2.147, 2.282, 2.388, 2.476, 2.55, 2.615, 2.672, 2.723, 
